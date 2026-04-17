@@ -61,8 +61,8 @@ const RegisterPage = () => {
 
         <div className="auth-header">
           <Link to="/" className="auth-logo">
-            <span className="logo-icon">S</span>
-            <span className="logo-text">ShopNest</span>
+            <span className="logo-icon">Q</span>
+            <span className="logo-text">QuickCart</span>
           </Link>
           <h1>Create account</h1>
           <p>Join thousands of happy shoppers</p>

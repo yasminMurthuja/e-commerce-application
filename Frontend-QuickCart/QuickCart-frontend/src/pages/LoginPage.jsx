@@ -82,8 +82,8 @@ const LoginPage = () => {
 
         {/* Demo credentials hint */}
         <div className="demo-hint">
-          <p><strong>Demo Admin:</strong> admin@shopnest.com / admin123</p>
-          <p><strong>Demo User:</strong> user@shopnest.com / user123</p>
+          <p><strong>Demo Admin:</strong> admin@quickcart.com / admin123</p>
+          <p><strong>Demo User:</strong> user@quickcart.com / user123</p>
         </div>
 
         <p className="auth-switch">

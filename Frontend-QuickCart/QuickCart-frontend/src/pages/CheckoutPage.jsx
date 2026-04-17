@@ -54,7 +54,7 @@ const CheckoutPage = () => {
       key:      data.razorpayKeyId,
       amount:   data.amount,
       currency: data.currency,
-      name:     'ShopNest',
+      name:     'QuickCart',
       description: `Order #${data.orderNumber}`,
       order_id: data.razorpayOrderId,
       prefill: {
