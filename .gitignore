@@ -1,0 +1,22 @@
+# React
+node_modules/
+dist/
+build/
+.env*
+
+# Spring Boot
+target/
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database dumps
+*.sql
+*.dumpNew-Item .gitignore
