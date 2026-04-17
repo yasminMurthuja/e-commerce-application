@@ -7,6 +7,18 @@ import { addToCart, selectCartLoading } from '../slices/CartSlice';
 import { selectIsLoggedIn } from '../slices/AuthSlice';
 import '../styles/ProductDetailPage.css';
 
+// ── Pexels URL fixer ──────────────────────────────────────────────
+const getDirectImageUrl = (url, fallback) => {
+  if (!url) return fallback;
+  if (url.includes('images.pexels.com') || url.match(/\.(jpg|jpeg|png|webp)$/i)) return url;
+  const match = url.match(/(\d+)\/?$/);
+  if (match && url.includes('pexels.com')) {
+    return `https://images.pexels.com/photos/${match[1]}/pexels-photo-${match[1]}.jpeg`;
+  }
+  return fallback;
+};
+// ─────────────────────────────────────────────────────────────────
+
 const ProductDetailPage = () => {
   const { id }       = useParams();
   const dispatch     = useDispatch();
@@ -15,7 +27,7 @@ const ProductDetailPage = () => {
   const loading      = useSelector(selectProductLoading);
   const cartLoading  = useSelector(selectCartLoading);
   const isLoggedIn   = useSelector(selectIsLoggedIn);
-  const [qty, setQty]     = useState(1);
+  const [qty, setQty]         = useState(1);
   const [activeTab, setActiveTab] = useState('description');
 
   useEffect(() => { dispatch(fetchProductById(id)); }, [dispatch, id]);
@@ -36,6 +48,7 @@ const ProductDetailPage = () => {
   }
 
   const placeholder = `https://placehold.co/600x450/f1f5f9/94a3b8?text=${encodeURIComponent(product.name.split(' ')[0])}`;
+  const imageSrc    = getDirectImageUrl(product.imageUrl, placeholder);
 
   return (
     <div className="product-detail-page">
@@ -53,7 +66,7 @@ const ProductDetailPage = () => {
           {/* Image */}
           <div className="product-detail-image-wrapper">
             <img
-              src={product.imageUrl || placeholder}
+              src={imageSrc}
               alt={product.name}
               onError={e => { e.target.src = placeholder; }}
               className="product-detail-image"
