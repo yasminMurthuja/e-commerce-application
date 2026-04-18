@@ -6,7 +6,7 @@
 
 ## 🎬 Live Demo
 
-https://github.com/user-attachments/assets/your-video.mp4
+https://github.com/user-attachments/assets/309e76d9-b654-465f-bb12-1caad35693cf
 
 ---
 
